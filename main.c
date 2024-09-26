@@ -15,8 +15,7 @@ int is_number(char *str);  /* Declare is_number function */
 int main(int argc, char **argv)
 {
     FILE *file;
-    char *line = NULL;
-    size_t len = 0;
+    char line[1024];  /* Buffer to store each line */
     unsigned int line_number = 0;
     stack_t *stack = NULL;  /* Initialize stack to NULL */
 
@@ -33,15 +32,14 @@ int main(int argc, char **argv)
         exit(EXIT_FAILURE);
     }
 
-    /* Read file line by line using fgets, as getline is not available in C89 */
-    while (getline(&line, &len, file) != -1)
+    /* Read file line by line using fgets */
+    while (fgets(line, sizeof(line), file) != NULL)
     {
         line_number++;
         printf("Reading line %d: %s", line_number, line);  /* Debugging output */
         process_line(line, line_number, &stack);
     }
 
-    free(line);
     fclose(file);
     return (0);
 }
