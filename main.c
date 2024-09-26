@@ -1,6 +1,6 @@
-#include <stdio.h>   // For FILE, fprintf, fopen, stderr, fclose
-#include <stdlib.h>  // For exit, EXIT_FAILURE
-#include "monty.h"   // For custom functions and stack_t
+#include <stdio.h>   /* For FILE, fprintf, fopen, stderr, fclose */
+#include <stdlib.h>  /* For exit, EXIT_FAILURE */
+#include "monty.h"   /* For custom functions and stack_t */
 
 int main(int argc, char **argv)
 {
