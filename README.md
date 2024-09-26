@@ -6,22 +6,30 @@ This project is an interpreter for Monty bytecodes files (.m files). Monty is a 
 ```
 monty/
 │
-├── bytecodes/
-│   └── 00.m      # Monty bytecode files (test files)
-├── include/
-│   └── monty.h   # Header file with all function prototypes and structures
-├── src/
-│   ├── main.c    # Main function to drive the interpreter
-│   ├── push.c    # Implementation for push opcode
-│   ├── pall.c    # Implementation for pall opcode
-│   ├── pint.c    # Implementation for pint opcode
-│   ├── pop.c     # Implementation for pop opcode
-│   ├── swap.c    # Implementation for swap opcode
-│   ├── add.c     # Implementation for add opcode
-│   ├── nop.c     # Implementation for nop opcode
-│   └── errors.c  # Functions for error handling
-├── README.md     # Mandatory project README
-└── Makefile      # Optional but helpful for compiling
+├── add.c               # Implementation of the add opcode
+├── div.c               # Implementation of the div opcode
+├── global.c            # Definition of the global variable `is_stack`
+├── main.c              # Entry point of the Monty interpreter
+├── mod.c               # Implementation of the mod opcode
+├── mul.c               # Implementation of the mul opcode
+├── nop.c               # Implementation of the nop opcode
+├── pall.c              # Implementation of the pall opcode
+├── pchar.c             # Implementation of the pchar opcode
+├── pint.c              # Implementation of the pint opcode
+├── pop.c               # Implementation of the pop opcode
+├── pstr.c              # Implementation of the pstr opcode
+├── push.c              # Implementation of the push opcode
+├── queue.c             # Switches the mode to FIFO (queue)
+├── rotl.c              # Rotates the stack to the top
+├── rotr.c              # Rotates the stack to the bottom
+├── stack.c             # Switches the mode to LIFO (stack)
+├── sub.c               # Implementation of the sub opcode
+├── swap.c              # Implementation of the swap opcode
+├── monty.h             # Header file with structure definitions and function prototypes
+├── README.md           # Project description and instructions
+├── Makefile            # Makefile to compile the project
+└── test.m              # Example Monty bytecode file
+
 ```
 
 ## Usage
