@@ -36,7 +36,7 @@ int main(int argc, char **argv)
     while (fgets(line, sizeof(line), file) != NULL)
     {
         line_number++;
-        printf("Reading line %d: %s", line_number, line);  /* Debugging output */
+        /* printf("Reading line %d: %s", line_number, line); */  /* Commented out */
         process_line(line, line_number, &stack);
     }
 
@@ -59,7 +59,7 @@ void process_line(char *line, unsigned int line_number, stack_t **stack)
     if (!opcode || opcode[0] == '#')  /* Ignore empty lines and comments */
         return;
 
-    printf("Processing opcode: %s (line %d)\n", opcode, line_number);  /* Debug */
+    /* printf("Processing opcode: %s (line %d)\n", opcode, line_number); */  /* Commented out */
 
     if (strcmp(opcode, "push") == 0)
     {
@@ -72,12 +72,12 @@ void process_line(char *line, unsigned int line_number, stack_t **stack)
         }
 
         n = atoi(arg);  /* Convert argument to an integer */
-        printf("Pushing value: %d\n", n);  /* Debug */
+        /* printf("Pushing value: %d\n", n); */  /* Commented out */
         push(stack, line_number, n);
     }
     else if (strcmp(opcode, "pall") == 0)
     {
-        printf("Executing pall (line %d)\n", line_number);  /* Debug */
+        /* printf("Executing pall (line %d)\n", line_number); */  /* Commented out */
         pall(stack, line_number);
     }
     else
