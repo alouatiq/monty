@@ -1,6 +1,8 @@
+#include "monty.h" 
+
 void pall(stack_t **stack, unsigned int line_number)
 {
-    (void)line_number;  /* Mark the parameter as unused */
+    (void)line_number;  /* Mark line_number as unused for now */
 
     stack_t *current = *stack;
 
