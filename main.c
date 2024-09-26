@@ -34,7 +34,7 @@ int main(int argc, char **argv)
     }
 
     /* Read file line by line using fgets, as getline is not available in C89 */
-    while (fgets(line, len, file) != NULL)
+    while (getline(&line, &len, file) != -1)
     {
         line_number++;
         printf("Reading line %d: %s", line_number, line);  /* Debugging output */
@@ -61,6 +61,8 @@ void process_line(char *line, unsigned int line_number, stack_t **stack)
     if (!opcode || opcode[0] == '#')  /* Ignore empty lines and comments */
         return;
 
+    printf("Processing opcode: %s (line %d)\n", opcode, line_number);  /* Debug */
+
     if (strcmp(opcode, "push") == 0)
     {
         char *arg = strtok(NULL, " \n\t");
@@ -72,10 +74,12 @@ void process_line(char *line, unsigned int line_number, stack_t **stack)
         }
 
         n = atoi(arg);  /* Convert argument to an integer */
+        printf("Pushing value: %d\n", n);  /* Debug */
         push(stack, line_number, n);
     }
     else if (strcmp(opcode, "pall") == 0)
     {
+        printf("Executing pall (line %d)\n", line_number);  /* Debug */
         pall(stack, line_number);
     }
     else
