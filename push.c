@@ -2,9 +2,11 @@
 
 void push(stack_t **stack, unsigned int line_number, int n)
 {
-    (void)line_number;  /* Mark the parameter as unused */
+    stack_t *new_node;  /* Move the declaration to the top */
 
-    stack_t *new_node = malloc(sizeof(stack_t));
+    (void)line_number;  /* Mark line_number as unused for now */
+
+    new_node = malloc(sizeof(stack_t));  /* Now the assignment */
     if (!new_node)
     {
         fprintf(stderr, "Error: malloc failed\n");
