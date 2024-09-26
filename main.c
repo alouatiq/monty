@@ -33,7 +33,8 @@ int main(int argc, char **argv)
 	exit(EXIT_FAILURE);
 	}
 
-	/* Read the file line by line using fgets as getline is not available in C89 */
+	/* Read the file line by line using fgets as getline*/
+ 	/* is not available in C89 */
 	while (fgets(line, len, file) != NULL)
 	{
 	line_number++;
@@ -46,7 +47,8 @@ int main(int argc, char **argv)
 }
 
 /**
-	* process_line - Parses a line and executes the corresponding opcode.
+	* process_line - Parses a line and executes
+ 	* the corresponding opcode.
 	* @line: The line from the bytecode file.
 	* @line_number: The current line number.
 	* @stack: Pointer to the top of the stack.
