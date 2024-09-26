@@ -16,6 +16,8 @@ void push(stack_t **stack, unsigned int line_number, int n)
         exit(EXIT_FAILURE);
     }
 
+    (void)line_number;  /* Mark line_number as unused */
+
     new_node->n = n;
     new_node->prev = NULL;
     new_node->next = *stack;
@@ -25,6 +27,5 @@ void push(stack_t **stack, unsigned int line_number, int n)
 
     *stack = new_node;
 
-    /* Debugging output */
-    /* printf("Pushed %d to the stack (line %d)\n", n, line_number); */
+    /* printf("Pushed %d to the stack (line %d)\n", n, line_number); */  /* Commented out */
 }
