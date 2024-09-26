@@ -50,6 +50,10 @@ void mod(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 
+/* Global Variable to Track Mode */
+extern int is_stack;  /* 1 for stack (LIFO), 0 for queue (FIFO) */
+
+
 /* Error handling */
 void handle_error(char *message, unsigned int line_number);
 
