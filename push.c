@@ -25,5 +25,6 @@ void push(stack_t **stack, unsigned int line_number, int n)
 
     *stack = new_node;
 
-    /* printf("Pushed %d to the stack (line %d)\n", n, line_number); */  /* Comment out */
+    /* Debugging output */
+    /* printf("Pushed %d to the stack (line %d)\n", n, line_number); */
 }
