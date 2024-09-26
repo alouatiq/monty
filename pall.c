@@ -9,7 +9,7 @@ void pall(stack_t **stack, unsigned int line_number)
 {
     stack_t *current = *stack;
 
-    printf("Executing pall (line %d)\n", line_number);  /* Debugging output */
+    /* printf("Executing pall (line %d)\n", line_number); */  /* Comment out */
 
     while (current)
     {
@@ -17,3 +17,4 @@ void pall(stack_t **stack, unsigned int line_number)
         current = current->next;
     }
 }
+
