@@ -99,16 +99,19 @@ void process_line(char *line, unsigned int line_number, stack_t **stack)
 	*/
 int is_number(char *str)
 {
-	int i;
+    int i = 0;
 
-	if (str == NULL || *str == '\0')
-	return (0);
+    if (str == NULL || *str == '\0')
+        return (0);
 
-	for (i = 0; str[i]; i++)  /* Declare i at the top of the block */
-	{
-	if (str[i] < '0' || str[i] > '9')
-	return (0);
-	}
+    if (str[0] == '-')  /* Handle negative numbers */
+        i++;
 
-	return (1);
+    for (; str[i]; i++)  /* Start loop from i, skip minus sign */
+    {
+        if (str[i] < '0' || str[i] > '9')
+            return (0);
+    }
+
+    return (1);
 }
