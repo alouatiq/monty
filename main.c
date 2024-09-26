@@ -8,9 +8,6 @@
  * Processes bytecode files and executes stack operations.
  */
 
-/* Define the global variable is_stack */
-int is_stack = 1;  /* Default to stack mode (LIFO) */
-
 void process_line(char *line, unsigned int line_number, stack_t **stack);
 int is_number(char *str);  /* Declare is_number function */
 
