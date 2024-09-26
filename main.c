@@ -2,6 +2,13 @@
 #include <stdlib.h>  /* For exit, EXIT_FAILURE */
 #include "monty.h"   /* For custom functions and stack_t */
 
+/**
+ * main - Entry point of the Monty bytecode interpreter.
+ * @argc: Argument count.
+ * @argv: Argument vector.
+ * Return: 0 on success, EXIT_FAILURE on failure.
+ */
+
 int main(int argc, char **argv)
 {
 	FILE *file;  /* Declaration moved to the top */
